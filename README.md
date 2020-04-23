@@ -39,7 +39,7 @@ A docker-compose and sample files were provided in order to test this component:
 - `config-pg.json`: tap config file (points do database)
 - `properties-pg.json`: table/fields selection
 
-To run this tap:
+To run this tap sample:
 
 ```sh
 docker-compose up postgres # wait a few seconds for db init
