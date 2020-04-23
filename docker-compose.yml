@@ -1,0 +1,23 @@
+version: '3.5'
+
+services:
+  postgres:
+    image: postgres:9
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+    - ./sample/country.postgresql.sql:/docker-entrypoint-initdb.d/country.postgresql.sql  
+  tap-postgres:
+    image: vertigo/tap-postgres
+    build: .
+    depends_on:
+    - postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+    - ./sample:/opt/sample
+    command: "-c /opt/sample/config-pg.json -p /opt/sample/properties-pg.json"
+    #command: "-c /opt/sample/config-pg.json --discover"
+
