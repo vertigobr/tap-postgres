@@ -8,3 +8,4 @@ RUN apk update && \
 
 WORKDIR /app
 ENTRYPOINT ["tap-postgres"]
+CMD ["-c","/opt/config/config-pg.json","-p","/opt/config/properties-pg.json"]

@@ -17,7 +17,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
     volumes:
-    - ./sample:/opt/sample
-    command: "-c /opt/sample/config-pg.json -p /opt/sample/properties-pg.json"
-    #command: "-c /opt/sample/config-pg.json --discover"
+    - ./sample:/opt/config
+    #command: "-c /opt/config/config-pg.json -p /opt/config/properties-pg.json"
+    #command: "-c /opt/config/config-pg.json --discover"
 
